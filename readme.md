@@ -57,8 +57,12 @@ This project is a simple REST API built using Node.js and Express. The API serve
 - **Example Requests:**
 
     - Fetch all profiles:
-      ```(http://localhost:3001/)
-
+    - 
+      ```bash
+      http://localhost:3001/
+      ```
     
     - Filter by name:
-      ```http://localhost:3001/profile?name=Linda
+      ```bash
+      http://localhost:3001/profile?name=Linda
+      ```

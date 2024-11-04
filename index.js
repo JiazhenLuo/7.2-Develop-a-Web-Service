@@ -5,9 +5,9 @@ app.use(express.json())
 const port = process.env.PORT || 3001
 
 const profile = [
-    { name: 'Linda', Nationality: 'Congo', appearance:'😃', favColor:'yellow' },
-    { name: 'Nico', Nationality: 'China', appearance:'🤓', favColor:'purple' },
-    { name: 'Stephen', Nationality: 'United States', appearance:'🥸', favColor:'green' },
+    { name: 'Linda', Nationality: 'Congo', appearance: '😃', favColor: 'yellow' },
+    { name: 'Nico', Nationality: 'China', appearance: '🤓', favColor: 'purple' },
+    { name: 'Stephen', Nationality: 'United States', appearance: '🥸', favColor: 'green' },
 ];
 
 app.get("/", (req, res) => {
@@ -19,7 +19,7 @@ app.get('/profile', (req, res) => {
     const favColor = req.query.favColor;
     const Nationality = req.query.Nationality
 
-    const filteredPeople = profile.filter(profile => 
+    const filteredPeople = profile.filter(profile =>
         (name ? profile.name === name : true) &&
         (favColor ? profile.favColor === favColor : true) &&
         (Nationality ? profile.Nationality === Nationality : true)
@@ -33,5 +33,5 @@ app.get('/profile', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}` )
+    console.log(`Example app listening on port ${port}`)
 })

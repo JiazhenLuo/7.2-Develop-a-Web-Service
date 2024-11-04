@@ -1,4 +1,6 @@
 import express from 'express'
+import fetch from 'node-fetch'
+
 const app = express()
 app.use(express.json())
 
@@ -35,3 +37,20 @@ app.get('/profile', (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+
+// Example of an application route that makes a request to another server
+app.get('/advice', async (req, res) => {
+    // Make a request to another wbesite and wait for a response
+    const response = await fetch('https://api.adviceslip.com/advice')
+  
+    // Read the response
+    const body = await response.json()
+  
+    // Print the repsonse body to the console
+    console.log(body)
+  
+    // Get the advice text string from the response body object
+    const advice = body.slip.advice
+  
+    res.json({ data: advice })
+  })
